@@ -1,0 +1,180 @@
+/*
+
+0].Features of Java8
+).Lambda Expression
+).Stream Api
+).Date and Time Api (java.time)
+).Base64 Encode Decode (java.util.Base64)
+).Method ref and constructor ref (::)
+).default methods in Interface (complete methods with default keyword)
+).static methods in Interface
+).functional interface (@FunctionalInterface)
+).Optional Classes (Improvement in IO,Collections)
+
+
+
+1].What is Lambda Expression?
+Lambda Expression is an anonymous function ie without modifier,name,return type and we need to
+add arrow(->) after ()
+It is only used with functional interface.
+
+syntax: ()->{}
+
+2].Benefits of Lambda:-
+Reduces the line of code.
+enable functional programming,parallel processing in java
+To call APIs very effectively like collection APIs,stream APIs
+To write more readable , Maintainable , Concise code
+
+3].Rules of Lambda Exp
+i)if the body of Lambda exp contains only single statement then no need to use {}
+ii).java compiler inter the type of variable passed in arguments,hence type is optional.
+iii).No use of return keyword
+
+ex: Traditional way
+public int sum(int a,int b){
+return a+b;
+}
+
+Lambda exp
+rule 1--> (int a,int b)-> return a+b
+rule 2--> (a,b)-> return a+b
+rule 3--> (a,b)-> a+b
+
+
+4].Functional Interface:->
+Only one->Abstract method
+Any no of->default and static methods (new features of interface)
+
+A Functional Interface is an Interface which allows only one Abstract
+method but can have any no of default and static methods within the Interface scope.
+
+There are some predefined functional interface in Java like Predicate,Function ,Consumer, Supplier etc.
+
+To invoke Lambda exp by using functional interface
+
+ex:Runnable,Callable,Comparable interface
+
+Lambda is used to implement functional interface in very simple and short manner.
+
+Important--> @FunctionalInterface
+
+4.1].Inheritance in Functional Interface
+public interface Parent{
+public void sayHello();      //only one abstract method
+}
+
+public interface Child extends Parent{  //it is also an functional interface
+
+}
+
+
+
+5]Different ways of using Functional interface
+i).Create Separate class and implements Interface
+
+ii).Create Anonymous class
+Interface_name ref=new Interface_name(){
+Override abstract method
+};
+
+
+6].We can Create Threads by using Lambda
+Runnable thread1=()->{
+//Thread task
+};
+
+7].Predicate
+-Predicate is an functional interface with only one abstract method
+-It holds any type of condition
+-default methods: and() , or() , negate()
+-static methods: isEqual()
+
+i)Unary Predicate
+-Takes a single input argument and returns a boolean value.
+-Defined by the Predicate<T> interface in the java.util.function package.
+-Used for testing a single condition on a stream of objects.
+-boolean test(T t)   t-input argument,true if the input arguments match the predicate,
+ otherwise false
+
+ex->Predicate<Integer> isEven=num->num%2==0;
+    boolean result=isEven.test(5);
+
+ii)Binary Predicate
+-Takes two input arguments and returns a boolean value.
+-Defined by the BiPredicate<T, U> interface in the java.util.function package.
+-T:type of first input arg  U:type of second input arg
+-Used for testing a condition involving two objects.
+- boolean test(T t, U u);
+ex:
+BiPredicate<Integer,Integer> predicate=(x,y)->x.equal(y);
+boolean result=predicate.test(5,6);    //false
+
+Primitive Predicates:
+-Java provides specialized predicates for primitive types (e.g., IntPredicate, LongPredicate)
+for performance optimization.
+
+Custom Predicates:
+-You can create custom predicates by implementing the Predicate or BiPredicate interface
+to define your own conditions.
+
+and()-Predicate1.and(Predicate2) ->when both predicates are true,it return true
+or()-Predicate1.or(Predicate2) ->when any one predicate will true ,it return true
+negate()-Predicate1.negate(Predicate2) -> true-false ,false-true
+isEqual()-Predicate1.isEqual(Predicate2) ->when both predicates are equal
+
+8].Function
+-It is an Functional Interface which has one abstract method.
+-Function<T,R>   take two args T-type of input to the function,R-type of result of function
+- R apply(T t)   return function result
+-perform task
+-default methods: compose(),andThen() (result same for both methods)
+-static methods: identity()   (jo input m pass hoga vahi output hoga)
+
+-Functional chaining in Java allows you to apply a sequence of operations to data
+in a more readable and concise way.
+
+ii).BiFunction
+-Functional Interface whose functional method is [R apply(T t,U u)] and return result of function
+-default: andThen()
+-define: BiFunction<T,U,R>   T-type of first arg,U-type of second arg,R-type of result
+
+
+9].Consumer
+-It is an Functional Interface which has one abstract method ie void accept(T t)
+- <T> – the type of the input to the operation
+-Represents an operation that accepts a single input argument and returns no result.
+-default method: andThen()
+
+10].Supplier
+-Supplier is a Functional Interface whose functional method is get().
+-Represents a supplier of results.
+-There is no requirement that a new or distinct result be returned each time
+the supplier is invoked.
+-Supplier<T>
+<T> – the type of results supplied by this supplier
+- T get() return result
+
+11].Unary Operator
+-Functional Interface that extend Function interface
+-It is use when input type and output type of Function<Integer,Integer> is same
+-Returns:a unary operator that always returns its input argument
+-UnaryOperator<T>
+-static method identity()
+-all methods of Function Functional Interface
+
+12].BinaryOperator
+-used when BiFunction of first input type,second input type,output type are same
+-BinaryOperator<T>
+-static methods:minBy(),maxBy()
+
+13].Method reference and Constructor reference  (::)
+-Method reference allows us to refer to a method without invoking it,
+making our code more clear and readable.They can be used in place of lambda
+expression,when lambda exp only calls their existing methods.
+
+
+
+
+
+*/

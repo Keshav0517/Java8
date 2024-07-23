@@ -1,0 +1,6 @@
+static method in Interface
+
+-A method in interface define with static Keyword
+-Call static method by using Interface_name.Method_name
+-Static methods with same signature in multiple interface
+-Static methods cant override in their implementation

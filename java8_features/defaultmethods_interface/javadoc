@@ -1,0 +1,15 @@
+1].Default Methods in Interface
+
+-Until Java 1.7 only public abstract methods are allowed inside Interface
+But Since java 1.8 Interface have complete methods and static
+
+-To define methods as default we need to use default keyword
+
+-default methods are not with same signature in multiple interface
+
+2].Benifits of default methods
+-To adopt default behaviour
+-Does not affect other functionality
+
+-default method can be override in their implementation class(when ambiguity arises)
+

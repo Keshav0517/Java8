@@ -1,0 +1,26 @@
+filter()-> It take Predicate as an argument ie condition to filter any collection
+map()-> It take Function as an argument
+distinct()-> It removes duplicates from list
+collect(Collector.toList())-> Used to collect all elements from Stream and convert into list
+sorted()-> Used to sorting elements either ascending or descending,ByDefault sorting is ascending
+sorted((a,b)->b-a) -> It takes Comparator as argument,Sorting in descending
+limit(2)-> Return 2 values from Starting
+skip(2)-> Skip 2 values from Starting
+peek(x->sout(x))-> It takes consumer
+
+reduce(start,operation)-> It reduce elements of Stream to single element like sum of elements
+min((a,b)->a-b)-> It takes comparator  min(Comparator.naturalOrder())
+max((a,b)->a-b) -> It also takes comparator  max(Comparator.naturalOrder())
+get()->
+count()->
+findFirst()->
+groupingBy() and partitioningBy()->inside collect(Comparator.groupingBy())
+anyMatch()->return boolean value and it takes condition
+parallel()->It is used to convert Collection into Parallel
+
+parallelStream()->It is used to divide large stream into chunks
+
+
+-->Types of Operation
+Intermediate operation->filter(),map(),distinct(),limit(),skip()
+Terminal operation->collect(),min(),max(),count(),forEach(),reduce()
