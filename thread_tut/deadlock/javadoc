@@ -1,0 +1,10 @@
+DeadLock:->
+Two threads and two resources
+
+First thread aquired the resource1 and second thread aquired the resource2
+First thread trying to access resource2 which is locked by second thread
+second thread trying to access resource1 which is locked by first thread
+
+Desktop-->Printer(locked)
+Laptop-->Scanner(locked)
+

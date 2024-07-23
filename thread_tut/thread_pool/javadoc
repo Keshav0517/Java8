@@ -1,0 +1,28 @@
+Thread Pool-->
+
+In Java, a thread pool is a software design pattern that manages a collection of worker threads. These threads stand ready to perform tasks, eliminating the need to create a new thread for each task. This improves performance by reducing the overhead associated with thread creation and destruction.
+
+Here's a breakdown of the key points:
+
+Purpose:
+Thread pools are used to manage and reuse threads efficiently, especially when dealing with
+a large number of short-lived tasks.
+
+Benefits:
+Improved performance: By reusing threads, thread pools reduce the overhead of creating and
+destroying threads for each task.
+
+Resource management: They help control the number of threads, preventing resource exhaustion
+in the face of heavy workloads.
+
+Task queuing: Thread pools can maintain a queue of tasks waiting to be executed, allowing
+for efficient distribution of work.
+
+Key components:
+Worker threads: The pool maintains a set of pre-created threads that are ready to execute tasks.
+Task queue: Tasks to be executed are placed in a queue.
+Thread pool executor: Manages the lifecycle of threads and assigns tasks from the queue to
+available threads.
+
+Java provides the java.util.concurrent.ThreadPoolExecutor class, which is the core
+implementation of the thread pool pattern.

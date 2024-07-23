@@ -1,0 +1,20 @@
+
+native->implementation of sleep method is not implemented by java,it is implemented by native
+languages like C,C++
+
+Prevent Thread Execution Methods
+
+1]public static native void sleep(long millis);      //CTE: throws InterruptedException
+2]public static native void yield();
+3]public final void join();                         //throws InterruptedException
+
+//Deprecated methods
+4]public final void suspend();
+5]public final void resume();
+6]public final void stop();
+7]public void destroy();
+
+//Interrupting a Thread methods
+8]public void interrupt();
+9]public boolean isInterrupted();
+10]public static boolean interrupted();

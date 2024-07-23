@@ -1,0 +1,27 @@
+/*
+interruption->
+
+interrupt()-->
+use->It is used to interrupt running/executing thread.
+interrupt method is work when thread is in sleeping or waiting state( sleep(),wait() )
+it throws InterruptedException
+public void interrupt();
+
+
+interrupted() and isInterrupted()-->
+
+interrupted()->It is used to check whether thread is interrupted or not (return boolean value)
+isInterrupted()->It is also used to check whether thread is interrupted or not (return boolean value)
+
+difference->
+
+interrupted() clear the status of interruption from true to false if thread is interrupt
+isInterrupted() does not clear the status of interruption
+
+interrupted() will change the result
+isInterrupted() will not change the result
+
+public static boolean interrupted();
+public boolean isInterrupted();
+
+*/
